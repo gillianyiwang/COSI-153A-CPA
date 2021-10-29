@@ -6,13 +6,13 @@ import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 import WelcomeScreen from './WelcomeScreen'
 import AboutScreen from './AboutScreen'
-import TBN1Screen from './TBN1Screen'
+import FinaceScreen from './FinaceScreen'
 import TBN2Screen from './TBN2Screen'
 
 
 const Tab = createBottomTabNavigator();
 const WelcomeStack = createNativeStackNavigator();
-const TBN1Stack = createNativeStackNavigator();
+const StartStack = createNativeStackNavigator();
 
 
 export default function MainPage() {
@@ -32,10 +32,10 @@ export default function MainPage() {
         </Tab.Screen>
         <Tab.Screen name={'START'}>
           {() => (
-            <TBN1Stack.Navigator>
-              <TBN1Stack.Screen name='TBN1' component={TBN1Screen} />
-              <TBN1Stack.Screen name='TBN2' component={TBN2Screen} />
-            </TBN1Stack.Navigator>
+            <StartStack.Navigator>
+              <StartStack.Screen name='Finace' component={FinaceScreen} />
+              <StartStack.Screen name='TBN2' component={TBN2Screen} />
+            </StartStack.Navigator>
           )}
         </Tab.Screen>
       </Tab.Navigator>

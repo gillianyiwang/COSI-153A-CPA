@@ -4,12 +4,18 @@ import { NavigationContainer, useFocusEffect } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 
-function TBN1Screen({ navigation }) {
+function FinaceScreen({ navigation }) {
   return (
     <View style={mainPageStyles.layout}>
       <Text style={{fontSize:25, justifyContent:'space-around', alignItems:'center' }}>
-        TBN1 Screen
+        Personal Finace Tracker
         {'\n'}{'\n'}
+      </Text>
+      <Text style={{fontSize:15, justifyContent:'space-around', alignItems:'center' }}>
+       In this page, you're able to track your finace by entering some info.
+       {'\n'}
+       (NOT AVAIABLE YET...)
+      {'\n'}
       </Text>
       <Button
         title='Go to TBN2'
@@ -30,4 +36,4 @@ const mainPageStyles = StyleSheet.create({
   },
   });
 
-export default TBN1Screen
+export default FinaceScreen
