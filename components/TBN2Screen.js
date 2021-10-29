@@ -12,9 +12,9 @@ function TBN2Screen({ navigation }) {
         {'\n'}{'\n'}
       </Text>
       <Button
-        title='Go to TBN1'
+        title='Go to Finace'
         color='lightcoral'
-        onPress={() => navigation.push('TBN1')}
+        onPress={() => navigation.push('Finace')}
       />
     </View>
   );
