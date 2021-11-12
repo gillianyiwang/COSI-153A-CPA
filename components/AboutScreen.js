@@ -6,7 +6,7 @@ import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 
 function AboutScreen({ navigation }) {
   return (
-    <View style={mainPageStyles.layout}>
+    <View style={styles.layout}>
       <Text style={{fontSize:25, justifyContent:'space-around', alignItems:'center' }}>
         What's WhatIBought?
         {'\n'}
@@ -26,7 +26,7 @@ function AboutScreen({ navigation }) {
 }
 
 
-const mainPageStyles = StyleSheet.create({
+const styles = StyleSheet.create({
   layout: {
   flex: 1,
   alignItems: 'center',

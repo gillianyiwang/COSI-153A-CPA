@@ -6,21 +6,21 @@ import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 
 function TBN2Screen({ navigation }) {
   return (
-    <View style={mainPageStyles.layout}>
+    <View style={styles.layout}>
       <Text style={{fontSize:25, justifyContent:'space-around', alignItems:'center' }}>
         TBN2 Screen
         {'\n'}{'\n'}
       </Text>
       <Button
-        title='Go to Finace'
+        title='Go to Shopping List'
         color='lightcoral'
-        onPress={() => navigation.push('Finace')}
+        onPress={() => navigation.navigate('Shopping List')}
       />
     </View>
   );
 }
 
-const mainPageStyles = StyleSheet.create({
+const styles = StyleSheet.create({
   layout: {
   flex: 1,
   alignItems: 'center',
