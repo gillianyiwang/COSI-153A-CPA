@@ -72,7 +72,7 @@ const storeData = async (value) => {
       }
 }
 
-const clearAllUGLY = () => {
+const clearOriginalData = () => {
       try {
         console.log('in clearData')
         AsyncStorage.clear()
@@ -157,7 +157,7 @@ const renderShoppingList = ({item}) => {
      <View style={{flexDirection:'row',
                    justifyContent:'space-around'}}>
      <Button
-            title={'Record'}
+            title={'Enter'}
             color='lightcoral'
             onPress = {() => {
               const newshoppingList =
