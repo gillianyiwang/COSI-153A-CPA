@@ -8,7 +8,7 @@ function TBN2Screen({ navigation }) {
   return (
     <View style={styles.layout}>
       <Text style={{fontSize:25, justifyContent:'space-around', alignItems:'center' }}>
-        TBN2 Screen
+        TBN2 Screen (coming soon!)
         {'\n'}{'\n'}
       </Text>
       <Button
