@@ -7,6 +7,11 @@ import AsyncStorage from '@react-native-async-storage/async-storage';
 
 function TrackerScreen({ navigation }) {
 
+  const [hours, setHours] = useState(0);
+  const [hourlyWage, setHourlyWage] = useState(0);
+  const [totalWage, setTotalWage] = useState(0);
+
+
   const [month,setMonth] = useState('')
   const [amount,setAmount] = useState('')
   const [incomeTracker,setIncomeTracker]= useState([])
@@ -106,7 +111,7 @@ function TrackerScreen({ navigation }) {
           {'\n'}{'\n'}
         </Text>
         <Text style={{fontSize:15, justifyContent:'space-around', alignItems:'center' }}>
-         Track your income on this page...
+         Track your income here...
          {'\n'}{'\n'}
         </Text>
       <Button
@@ -114,6 +119,31 @@ function TrackerScreen({ navigation }) {
         color='lightcoral'
         onPress={() => navigation.navigate('Shopping List')}
       />
+
+      <View>
+  <Text style={{fontSize:15, justifyContent:'space-around', alignItems:'center' }}>
+     {'\n'}{'\n'}
+    Want to convert your hourly wage to monthly wage?  ⇙
+  </Text>
+  <TextInput
+        style={{backgroundColor: 'mistyrose', fontSize:13}}
+        placeholder='Hourly Wage'
+        onChangeText={text => {setHourlyWage(parseFloat(text))}}
+    />
+  <TextInput
+        style={{backgroundColor: 'mistyrose', fontSize:13}}
+        placeholder='Total Working Hours Per Month'
+        onChangeText={text => {setHours(parseFloat(text))}}
+    />
+  <Button
+        title={'Caculate'}
+        color='lightcoral'
+        onPress = {() =>
+             setTotalWage(hours * hourlyWage)}
+    />
+  <Text> Your monthly wage is ${totalWage}!</Text>
+</View>
+
       <View style={styles.container}>
    <Text style={{fontSize:15}}>
        Enter your income below:

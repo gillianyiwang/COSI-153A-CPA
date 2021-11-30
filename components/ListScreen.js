@@ -111,7 +111,7 @@ const renderShoppingList = ({item}) => {
         {'\n'}{'\n'}
       </Text>
       <Text style={{fontSize:15, justifyContent:'space-around', alignItems:'center' }}>
-       Track your shopping history on this page...
+       Track your shopping history here...
        {'\n'}{'\n'}
       </Text>
       <Button
