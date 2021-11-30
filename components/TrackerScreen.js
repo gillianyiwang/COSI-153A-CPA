@@ -13,7 +13,7 @@ function TrackerScreen({ navigation }) {
 
 
   const [month,setMonth] = useState('')
-  const [amount,setAmount] = useState('')
+  const [income,setIncome] = useState('')
   const [incomeTracker,setIncomeTracker]= useState([])
 
   useEffect(() => {getData()}
@@ -33,7 +33,7 @@ function TrackerScreen({ navigation }) {
 
                 setIncomeTracker([])
                 setMonth('')
-                setAmount('')
+                setIncome('')
               }
             })
            .catch((error)=> {   console.log('error in getData ')})
@@ -54,7 +54,7 @@ function TrackerScreen({ navigation }) {
 
             setIncomeTracker([])
             setMonth('')
-            setAmount('')
+            setIncome('')
           }
         } catch(e) {
           console.log('error in getData ')
@@ -99,7 +99,7 @@ function TrackerScreen({ navigation }) {
     return (
       <View style={styles.list}>
            <Text>{item.month}</Text>
-           <Text>{item.amount} </Text>
+           <Text>{item.income} </Text>
       </View>
     )
   }
@@ -115,7 +115,7 @@ function TrackerScreen({ navigation }) {
          {'\n'}{'\n'}
         </Text>
       <Button
-        title='Go to Shopping List'
+        title='Back to Shopping List'
         color='lightcoral'
         onPress={() => navigation.navigate('Shopping List')}
       />
@@ -163,11 +163,11 @@ function TrackerScreen({ navigation }) {
 
          <TextInput
            style={{backgroundColor: 'mistyrose', fontSize:13}}
-           placeholder='Amount'
+           placeholder='Income'
            onChangeText={text => {
-                setAmount(text);
+                setIncome(text);
               }}
-           value = {amount}
+           value = {income}
          />
      </View>
      <View style={{flexDirection:'row',
@@ -179,13 +179,13 @@ function TrackerScreen({ navigation }) {
               const newincomeTracker =
                 incomeTracker.concat(
                   {'month':month,
-                   'amount':amount,
+                   'income':income,
                    'completed':new Date()
                 })
               setIncomeTracker(newincomeTracker)
               storeData(newincomeTracker)
               setMonth('')
-              setAmount('')
+              setIncome('')
             }}
             />
      <Button
