@@ -13,7 +13,7 @@ function AboutScreen({ navigation }) {
       </Text>
       <Text style={{fontSize:15, justifyContent:'space-around', alignItems:'center' }}>
         {'\n'}
-        WhatIBought is a simple tool to record your shopping list.
+        WhatIBought records your shopping list and income sources.
         {'\n'}
       </Text>
       <Button

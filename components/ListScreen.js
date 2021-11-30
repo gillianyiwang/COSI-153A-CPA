@@ -10,7 +10,7 @@ function ListScreen({ navigation }) {
 
 const [dateTime,setDateTime] = useState('')
 const [items,setItems] = useState('')
-const [amount,setamount] = useState('')
+const [amount,setAmount] = useState('')
 const [shoppingList,setShoppingList]= useState([])
 
 useEffect(() => {getData()}
@@ -31,7 +31,7 @@ const getOriginalData = () => {
               setShoppingList([])
               setDateTime('')
               setItems('')
-              setamount('')
+              setAmount('')
             }
           })
          .catch((error)=> {   console.log('error in getData ')})
@@ -53,7 +53,7 @@ const getData = async () => {
           setShoppingList([])
           setDateTime('')
           setItems('')
-          setamount('')
+          setAmount('')
         }
       } catch(e) {
         console.log('error in getData ')
@@ -111,23 +111,23 @@ const renderShoppingList = ({item}) => {
         {'\n'}{'\n'}
       </Text>
       <Text style={{fontSize:15, justifyContent:'space-around', alignItems:'center' }}>
-       Track your shopping history by entering some info.
+       Track your shopping history on this page...
        {'\n'}{'\n'}
       </Text>
       <Button
-        title='Go to TBN2'
+        title='Go to Income Tracker'
         color='lightcoral'
-        onPress={() => navigation.navigate('TBN2')}
+        onPress={() => navigation.navigate('Income Tracker')}
       />
       <View style={styles.container}>
    <Text style={{fontSize:15}}>
-       Enter the info for your shopping info below:
+       Enter your shopping info below:
    </Text>
 
    <View style={{flexDirection:'row',
                  margin:10,
                  justifyContent:'space-around'}}>
-         <TextInput // for the Date & Time
+         <TextInput
            style={{backgroundColor: 'mistyrose', fontSize:13}}
            placeholder='Date & Time'
            onChangeText={text => {
@@ -136,7 +136,7 @@ const renderShoppingList = ({item}) => {
            value = {dateTime}
          />
 
-         <TextInput // for the items
+         <TextInput
            style={{backgroundColor: 'mistyrose', fontSize:13}}
            placeholder='Items'
            onChangeText={text => {
@@ -145,11 +145,11 @@ const renderShoppingList = ({item}) => {
            value = {items}
          />
 
-         <TextInput // for the amount
+         <TextInput
            style={{backgroundColor: 'mistyrose', fontSize:13}}
            placeholder='Amount'
            onChangeText={text => {
-                setamount(text);
+                setAmount(text);
               }}
            value = {amount}
          />
@@ -171,11 +171,11 @@ const renderShoppingList = ({item}) => {
               storeData(newshoppingList)
               setDateTime('')
               setItems('')
-              setamount('')
+              setAmount('')
             }}
             />
      <Button
-             title={'Clear!!!'}
+             title={'Reset All'}
              color='lightcoral'
              onPress = {() => {
                clearAll()
@@ -187,10 +187,6 @@ const renderShoppingList = ({item}) => {
    <View style={{flexDirection:'row',
                  justifyContent:'center',
                  backgroundColor:'lavenderblush'}}>
-     <Text style={{margin: 10, padding: 5, fontSize:20,
-                   color:'white',backgroundColor:'lightcoral'}}>
-                   My Shopping List
-      </Text>
    </View>
 
    <FlatList
