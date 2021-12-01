@@ -189,7 +189,7 @@ function TrackerScreen({ navigation }) {
             }}
             />
      <Button
-             title={'Reset all'}
+             title={'Reset All'}
              color='lightcoral'
              onPress = {() => {
                clearAll()
