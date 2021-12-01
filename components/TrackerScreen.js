@@ -136,7 +136,7 @@ function TrackerScreen({ navigation }) {
         onChangeText={text => {setHours(parseFloat(text))}}
     />
   <Button
-        title={'Caculate'}
+        title={'Calculate'}
         color='lightcoral'
         onPress = {() =>
              setTotalWage(hours * hourlyWage)}
