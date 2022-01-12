@@ -18,7 +18,7 @@ function WelcomeScreen({ navigation }) {
       </Text>
       <Text style={{fontSize:15, justifyContent:'space-around', alignItems:'center' }}>
        {'\n'}
-       Learn more about the WhatIBought... ⇙
+       Learn more about WhatIBought... ⇙
        {'\n'}
       </Text>
       <Button
